@@ -16,7 +16,8 @@ var Prediction = (function () {
         }
         var envelope = {
             _xsrf: getCookie("_xsrf"),
-            "data[]": data
+            "data[]": data,
+            "new_number": pre_x
         }
         return envelope;
     }
@@ -104,6 +105,7 @@ var app = new Vue({
             var image = self.canvas.snapShot(self.SNAP_SIZE);
             var sample = self.canvas.toSample(self.SAMPLE_SIZE, self.SAMPLE_SIZE);
             var total = sample[1].reduce(function(a, b){ return a + b; });
+            myFunction();
             if(total == 0){
                 return false;
             }
