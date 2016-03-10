@@ -24,22 +24,7 @@ class PredictionHandler(BaseHandler):
         machine = MachineLoader.load(machines.number_recognizer)
         if len(validated) > 0:
             predicted = machine.predict(validated)
-            print(validated)
-            import numpy as np
-            import scipy
-            #scipy.mise.toimage(np.array(validated).reshape(8,8), cmin=0.0, cmax=16).save('outfile.jpg')
             resp["result"] = str(predicted[0])
-
-            with open('D:/number_recognizer/number/test.txt','a') as thefile:
-                for item in validated:
-                    thefile.write("%s\n" % item)
-
-            from random import randint
-            b = randint(0,9)
-            print('please input the number: %d' % b)
-            with open('D:/number_recognizer/number/target.txt','a') as thefile:
-                thefile.write("%s\n" % b)
-
 
         self.write(resp)
 
