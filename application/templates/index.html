@@ -14,6 +14,22 @@
 {% block body %}
 <div id="main" class="column-group gutters">
     <div align="center" class="all-100 canvas-area">
+      <body>
+        <p>Please write down this number.</p>
+        <p id="demo"></p>
+        <script>
+        var randomx
+        var pre_x
+        $(document).ready(function(){
+          myFunction();
+        });
+        function myFunction() {
+          pre_x = randomx;
+          randomx = Math.floor((Math.random() * 10));
+          document.getElementById("demo").innerHTML = randomx;}
+
+
+</script>
         <div>
             <canvas id="canvas" width="170" height="170"></canvas>
         </div>
