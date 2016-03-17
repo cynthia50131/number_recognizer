@@ -20,19 +20,19 @@ class PredictionHandler(BaseHandler):
         resp = {"result": str(-1)}
         data = self.get_arguments("data[]")
         new_number = self.get_arguments("new_number")
-        print(new_number)
+        #print(new_number)
 
         validated = Validator.validate_data(data)
         machine = MachineLoader.load(machines.number_recognizer)
         if len(validated) > 0:
             predicted = machine.predict(validated)
-            print(validated)
+            #print(validated)
             import numpy as np
             import scipy
             #scipy.mise.toimage(np.array(validated).reshape(8,8), cmin=0.0, cmax=16).save('outfile.jpg')
-            resp["result"] = str(predicted[0])
+            resp["result"] = str(int(predicted[0]))
 
-            with open('C:/number_recognizer/test.txt','a') as thefile:
+            with open('D:/number_recognizer/test.txt','a') as thefile:
                 for item in validated:
                     thefile.write("%s\t" % item)
                 thefile.write("\n")
@@ -41,7 +41,7 @@ class PredictionHandler(BaseHandler):
             #from random import randint
             #b = randint(0,9)
             #print('please input the number: %d' % b)
-            with open('C:/number_recognizer/target.txt','a') as thefile:
+            with open('D:/number_recognizer/target.txt','a') as thefile:
                 thefile.write("%s\n" % new_number[0])
 
 

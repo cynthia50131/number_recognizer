@@ -3,7 +3,7 @@ from sklearn.externals import joblib
 
 
 class MachineLoader():
-    MACHINE_FILE = "machine2.pkl"
+    MACHINE_FILE = "machine3.pkl"
     DATA_FOLDER = os.path.join(os.path.dirname(__file__), "../data/")
     FEEDBACK_FILE_FORMAT = "{0}_feedback.txt"
 
