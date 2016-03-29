@@ -26,7 +26,7 @@ var Canvas = (function () {
         self.pencil = {
             strokeStyle: "#df4b26",
             lineJoin: "round",
-            lineWidth: 10
+            lineWidth: 15
         };
 
         if(arguments.length > 1){
