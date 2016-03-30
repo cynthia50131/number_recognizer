@@ -17,7 +17,7 @@ var Prediction = (function () {
         var envelope = {
             _xsrf: getCookie("_xsrf"),
             "data[]": data,
-            "new_number": pre_x
+/*            "new_number": pre_x    */
         }
         return envelope;
     }

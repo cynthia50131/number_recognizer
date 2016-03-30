@@ -14,12 +14,13 @@ class BaseHandler(tornado.web.RequestHandler):
     MACHINE_SESSION_KEY = "number_recognizer"
 
 
+
 class PredictionHandler(BaseHandler):
 
     def post(self):
         resp = {"result": str(-1)}
         data = self.get_arguments("data[]")
-        new_number = self.get_arguments("new_number")
+#        new_number = self.get_arguments("new_number")
         #print(new_number)
 
         validated = Validator.validate_data(data)
@@ -27,8 +28,8 @@ class PredictionHandler(BaseHandler):
         if len(validated) > 0:
             predicted = machine.predict(validated)
             #print(validated)
-            import numpy as np
-            import scipy
+#            import numpy as np
+#            import scipy
             #scipy.mise.toimage(np.array(validated).reshape(8,8), cmin=0.0, cmax=16).save('outfile.jpg')
             resp["result"] = str(int(predicted[0]))
 
@@ -45,7 +46,7 @@ class PredictionHandler(BaseHandler):
 #                thefile.write("%s\n" % new_number[0])
 
 
-        self.write(resp)
+         self.write(resp)
 
 
 class FeedbackHandler(BaseHandler):
