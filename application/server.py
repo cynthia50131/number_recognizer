@@ -44,9 +44,9 @@ class PredictionHandler(BaseHandler):
             with open('D:/number_recognizer/target15.txt','a') as thefile:
                 thefile.write("%s\n" % new_number[0])
 
-
-        self.write(resp)
 '''
+        self.write(resp)
+
 
 class FeedbackHandler(BaseHandler):
 
