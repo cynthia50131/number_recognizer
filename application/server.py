@@ -31,20 +31,20 @@ class PredictionHandler(BaseHandler):
             import scipy
             #scipy.mise.toimage(np.array(validated).reshape(8,8), cmin=0.0, cmax=16).save('outfile.jpg')
             resp["result"] = str(int(predicted[0]))
-'''
-            with open('D:/number_recognizer/test15.txt','a') as thefile:
-                for item in validated:
-                    thefile.write("%s\t" % item)
-                thefile.write("\n")
+
+#            with open('D:/number_recognizer/test15.txt','a') as thefile:
+#                for item in validated:
+#                    thefile.write("%s\t" % item)
+#                thefile.write("\n")
 
 
             #from random import randint
             #b = randint(0,9)
             #print('please input the number: %d' % b)
-            with open('D:/number_recognizer/target15.txt','a') as thefile:
-                thefile.write("%s\n" % new_number[0])
+#            with open('D:/number_recognizer/target15.txt','a') as thefile:
+#                thefile.write("%s\n" % new_number[0])
 
-'''
+
         self.write(resp)
 
 
